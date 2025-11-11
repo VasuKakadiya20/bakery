@@ -160,7 +160,7 @@ export default function Settings() {
   const fetchAdminData = async (id) => {
     try {
       const res = await fetchDataFromapi(`/admin/${id}`);
-      console.log("admin Data Setting",res)
+      console.log("admin Data Setting", res)
       setAdmin({
         name: res.Data.Name,
         email: res.Data.Email,
@@ -192,114 +192,120 @@ export default function Settings() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (admin.password.length < 6) {
+      toast.error("Password must be at least 6 characters long!");
+      return;
+    }
+
     setLoading(true);
     const adminData = JSON.parse(localStorage.getItem("adminData"));
 
-    setTimeout(async() => {
-    const formData = new FormData();
-    formData.append("Name", admin.name);
-    formData.append("Email", admin.email);
-    formData.append("phonenumber", admin.phone);
-    formData.append("password", admin.password);
-    if (file) {
-      formData.append("userimg", file);
-    }
+    setTimeout(async () => {
+      const formData = new FormData();
+      formData.append("Name", admin.name);
+      formData.append("Email", admin.email);
+      formData.append("phonenumber", admin.phone);
+      formData.append("password", admin.password);
+      if (file) {
+        formData.append("userimg", file);
+      }
 
-    try {
-      await updateData(`/admin/${adminData._id}`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-   toast.success('Profile updated successfully!');
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      toast.error('Error updating profile');
-    } finally {
-      setLoading(false);
-    }  
+      try {
+        await updateData(`/admin/${adminData._id}`, formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+        toast.success('Profile updated successfully!');
+      } catch (error) {
+        console.error("Error updating profile:", error);
+        toast.error('Error updating profile');
+      } finally {
+        setLoading(false);
+      }
     }, 1000);
   };
 
   return (
     <>
       <ToastContainer position="top-right" autoClose={2000} theme="colored" />
-    <div className="add-category-container">
-      <h3>User Details</h3>
-      <form className="add-category-form" onSubmit={handleSubmit}>
-        <div className="profile-img-container">
-          <img
-            src={admin.imgUrl || "https://res.cloudinary.com/dld4ymcrd/image/upload/v1762431115/user_g1zy4i.png"}
-            alt="Profile"
-          />
-          <label className="img-upload-label">
-            <AddPhotoAlternateIcon />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              style={{ display: "none" }}
+      <div className="add-category-container">
+        <h3>User Details</h3>
+        <form className="add-category-form" onSubmit={handleSubmit}>
+          <div className="profile-img-container">
+            <img
+              src={admin.imgUrl || "https://res.cloudinary.com/dld4ymcrd/image/upload/v1762431115/user_g1zy4i.png"}
+              alt="Profile"
             />
-          </label>
-        </div>
+            <label className="img-upload-label">
+              <AddPhotoAlternateIcon />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                style={{ display: "none" }}
+              />
+            </label>
+          </div>
 
-        <div className="forms-group">
-          <label>User Name</label>
-          <TextField
-            name="name"
-            value={admin.name}
-            onChange={handleChange}
-            required
-            fullWidth
-            variant="outlined"
-            size="small"
-          />
-        </div>
+          <div className="forms-group">
+            <label>User Name</label>
+            <TextField
+              name="name"
+              value={admin.name}
+              onChange={handleChange}
+              required
+              fullWidth
+              variant="outlined"
+              size="small"
+            />
+          </div>
 
-        <div className="forms-group">
-          <label>Email Id</label>
-          <TextField
-            name="email"
-            value={admin.email}
-            onChange={handleChange}
-            required
-            fullWidth
-            variant="outlined"
-            size="small"
-          />
-        </div>
+          <div className="forms-group">
+            <label>Email Id</label>
+            <TextField
+              name="email"
+              value={admin.email}
+              onChange={handleChange}
+              required
+              fullWidth
+              variant="outlined"
+              size="small"
+            />
+          </div>
 
-        <div className="forms-group">
-          <label>Phone Number</label>
-          <TextField
-            name="phone"
-            value={admin.phone}
-            onChange={handleChange}
-            type="number"
-            required
-            fullWidth
-            variant="outlined"
-            size="small"
-          />
-        </div>
+          <div className="forms-group">
+            <label>Phone Number</label>
+            <TextField
+              name="phone"
+              value={admin.phone}
+              onChange={handleChange}
+              type="number"
+              required
+              fullWidth
+              variant="outlined"
+              size="small"
+            />
+          </div>
 
-        <div className="forms-group">
-          <label>Password</label>
-          <TextField
-            name="password"
-            value={admin.password}
-            onChange={handleChange}
-            type="text"
-            required
-            fullWidth
-            variant="outlined"
-            size="small"
-          />
-        </div>
+          <div className="forms-group">
+            <label>Password</label>
+            <TextField
+              name="password"
+              value={admin.password}
+              onChange={handleChange}
+              type="text"
+              required
+              fullWidth
+              variant="outlined"
+              size="small"
+            />
+          </div>
 
-        <button type="submit" className="btn-submit" disabled={loading}>
-          {loading ? "Saving..." : "Save"}
-        </button>
-      </form>
-    </div>
-     </>
+          <button type="submit" className="btn-submit" disabled={loading}>
+            {loading ? "Saving..." : "Save"}
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
