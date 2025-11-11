@@ -160,7 +160,7 @@ export default function Settings() {
   const fetchAdminData = async (id) => {
     try {
       const res = await fetchDataFromapi(`/admin/${id}`);
-      console.log("admin Data Setting", res)
+      // console.log("admin Data Setting", res)
       setAdmin({
         name: res.Data.Name,
         email: res.Data.Email,

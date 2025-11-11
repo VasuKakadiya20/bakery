@@ -467,7 +467,7 @@ const handleSubmit = async (e) => {
       const res = await postdata("/product/create", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      console.log("Product added:", res.data);
+      // console.log("Product added:", res.data);
       toast.success("Product added successfully!");
       setTimeout(() => navigate("/productslist"), 2000);
     } catch (err) {

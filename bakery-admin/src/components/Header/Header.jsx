@@ -40,7 +40,7 @@ function Header() {
   const fetchAdminData = async (id) => {
     try {
       const res = await fetchDataFromapi(`/admin/${id}`);
-      console.log("Admin Data:",res)
+      // console.log("Admin Data:",res)
       setAdmin({
         name: res.Data.Name,
         imgUrl: res.Data.userimg,

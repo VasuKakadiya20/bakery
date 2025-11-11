@@ -44,7 +44,7 @@ const SingleCategoryPage = () => {
   useEffect(() => {
     fetchDataFromapi(`/category`).then((res) => {
       setcategoryProduct(res)
-      console.log("category", res)
+      // console.log("category", res)
     })
   }, [])
 
@@ -55,7 +55,7 @@ const SingleCategoryPage = () => {
       });
       fetchDataFromapi(`/category`).then((res) => {
         setcategoryProduct(res)
-        console.log("Category", res)
+        // console.log("Category", res)
       })
     })
   }

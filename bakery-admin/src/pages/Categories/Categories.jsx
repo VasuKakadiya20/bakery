@@ -23,7 +23,7 @@ const AddCategoryPage = () => {
         name: categoryName,
       });
 
-      console.log("Category added successfully:", response);
+      // console.log("Category added successfully:", response);
       toast.success('Category added successfully!');
       setCategoryName("");
       setCategoryID("");

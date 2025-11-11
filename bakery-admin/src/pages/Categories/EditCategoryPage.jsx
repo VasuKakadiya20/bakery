@@ -27,7 +27,7 @@ const EditCategoryPage = () => {
         name: categoryName,
       });
       toast.success('Category updated successfully!');
-      console.log("Category updated successfully:", response);
+      // console.log("Category updated successfully:", response);
       setTimeout(() => { navigate("/Categorieslist") }, 2000);
     } catch (error) {
       console.error("Error updating category:", error);

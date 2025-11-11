@@ -42,7 +42,7 @@ const ProductTable = () => {
   useEffect(() => {
     fetchDataFromapi('/product').then((res) => {
       setproductData(res);
-      console.log("product",res)
+      // console.log("product",res)
     })
   }, [])
 

@@ -26,7 +26,7 @@ export default function EditProduct() {
 
   useEffect(() => {
     fetchDataFromapi(`/product/${ id}`).then((res) => {
-      console.log("this is update product before data:", res)
+      // console.log("this is update product before data:", res)
       setProduct({
         Id: res.product?.Id,
         Name: res.product?.Name,
@@ -92,7 +92,7 @@ export default function EditProduct() {
       };
 
       const res = await updateData(`/product/${id}`, updateddata);
-      console.log("Product updated:", res);
+      // console.log("Product updated:", res);
       toast.success('Product updated successfully!');
       setTimeout(() => navigate("/productslist", { replace: true }), 2000);
     } catch (error) {
