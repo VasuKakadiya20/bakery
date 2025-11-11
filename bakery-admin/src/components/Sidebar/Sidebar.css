@@ -1,0 +1,85 @@
+.sidebar {
+  width: 240px; 
+  background: #2a2d3e; 
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  min-height: 95vh;
+}
+
+.sidebar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar .menu,
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li,
+.menu li {
+  margin-bottom: 8px; 
+}
+
+.sidebar .menu li a,
+.menu a,
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 12px; 
+  color: #ccc; 
+  text-decoration: none;
+  padding: 12px 15px; 
+  border-radius: 8px; 
+  font-size: 14px;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar .menu li a:hover,
+.menu a:hover{
+  background: #444; 
+  color: #fff;     
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+.chevron.rotates{
+  transform: rotateZ(270deg);
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 25px;
+  margin-top: 5px;
+}
+
+.submenu li {
+  margin-bottom: 6px;
+}
+
+.submenu a {
+  font-size: 13px;
+  padding: 6px 10px;
+  display: block;
+  color: #ddd;
+}
+
+.submenu a:hover {
+  color: #fff;
+}

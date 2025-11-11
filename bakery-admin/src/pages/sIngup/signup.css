@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f0f0fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-box {
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 30px rgba(28, 30, 60, 0.06);
+  width: 420px;
+  max-width: 92%;
+}
+
+.login-box h2 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e0e0e8;
+  padding: 10px 12px;
+  transition: all 0.25s ease;
+  outline: none;
+  font-size: 14px;
+  background: #fbfbff;
+}
+
+.form-control:focus {
+  border-color: #4a47e0;
+  box-shadow: 0 6px 18px rgba(74, 71, 224, 0.08);
+}
+
+.btn-primary {
+  background-color: #4a47e0;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover {
+  background-color: #3a36c0;
+}
+
+.text-center { text-align: center; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.25rem; }
+.mt-3 { margin-top: 1rem; }
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 25px 18px;
+  }
+}
+
+/* Small helper to keep links subtle */
+a { color: #4a47e0; text-decoration: none; }
+a:hover { text-decoration: underline; }

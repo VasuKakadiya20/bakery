@@ -1,0 +1,63 @@
+.app-container {
+  display: flex;
+  height: 90vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.sidebar {
+  width: 240px;
+  background: #2a2d3e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar .logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .menu li {
+  margin: 15px 0;
+}
+.sidebar .menu li i{
+  font-size: 20px !important;
+}
+
+.sidebar .menu li a {
+  text-decoration: none;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.sidebar .menu li a:hover {
+  background: #444;
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #f0f0fa;
+  overflow-y: auto;
+  min-height: 95vh;
+  min-width: 150vh !important;
+  max-width: 100% !important;
+}
+
+.router{
+  background: #f0f0fa !important;
+}
