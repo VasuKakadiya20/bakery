@@ -32,7 +32,7 @@ export const updateData = async (url,FormData) =>{
 
 export const deletedata = async (url) =>{
   try{
-    const {data} = await axios.delete(`http://localhost:4000${url}`);
+    const {data} = await axios.delete(`https://bakery-e063.onrender.com${url}`);
     return data;
   }catch (error){
     console.error("delete error :" ,error)
