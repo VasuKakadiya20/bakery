@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const fetchDataFromapi = async(url) =>{
     try{
-        const {data} = await axios.get(`http://localhost:4000`+ url)
+        const {data} = await axios.get(`https://bakery-server-bkrv.onrender.com`+ url)
         return data;
     }catch(err){
         console.error(err)
@@ -12,7 +12,7 @@ export const fetchDataFromapi = async(url) =>{
 
 export const postdata = async (url,FormData) =>{
     try{
-        const {data} = await axios.post(`http://localhost:4000${url}` ,FormData)
+        const {data} = await axios.post(`https://bakery-server-bkrv.onrender.com${url}` ,FormData)
         return data;
     }catch(error){
         console.error("post Error:" , error)
@@ -22,7 +22,7 @@ export const postdata = async (url,FormData) =>{
 
 export const updateData = async (url,FormData) =>{
     try{
-        const {data} = await axios.put(`http://localhost:4000${url}` , FormData)
+        const {data} = await axios.put(`https://bakery-server-bkrv.onrender.com${url}` , FormData)
         return data
     }catch(error){
         console.error("update error:", error)
@@ -32,10 +32,12 @@ export const updateData = async (url,FormData) =>{
 
 export const deletedata = async (url) =>{
   try{
-    const {data} = await axios.delete(`https://bakery-e063.onrender.com${url}`);
+    const {data} = await axios.delete(`https://bakery-server-bkrv.onrender.com${url}`);
     return data;
   }catch (error){
     console.error("delete error :" ,error)
     return error;
   }
 }
+
+// https://bakery-server-bkrv.onrender.com
